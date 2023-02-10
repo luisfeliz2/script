@@ -1,0 +1,31 @@
+#!/bin/bash
+
+if [ $# -ne 2 ]; then
+    echo "ERROR muy poco parametros"
+    
+    exit 1
+fi
+
+if [ ! -f "$1" ]; then
+    echo "$1 no existe "
+    exit 1
+fi
+
+if [ ! -f "$2" ]; then
+    echo "$2 como destino no existe."
+    exit 1
+fi
+
+echo "quiere sobreescribir $2"
+read res
+
+if [ "$res" == "y" ]; then
+    cp "$1" "$2"
+    echo "archivo copiado"
+else
+    echo "cancelado"
+fi
+
+
+
+

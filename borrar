@@ -1,0 +1,12 @@
+#!/bin/bash
+
+file=$1
+
+if [ -f $file ]; then
+  cp $file /tmp
+  rm $file
+  echo "El archivo $file ha sido copiado a /tmp y eliminado."
+else
+  echo "El archivo $file no existe."
+fi
+
